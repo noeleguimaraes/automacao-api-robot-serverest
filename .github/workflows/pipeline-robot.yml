@@ -27,3 +27,10 @@ jobs:
         # run: echo Executando os testes de API do Robot
         run: |
           robot -d reports tests
+
+      - name: Salvando resultado dos testes
+          # run: echo Salvando o Report dos Testes
+        uses: actions/upload-artifact@v3
+        with:
+            name: resultado-testes
+            path: ./reports
