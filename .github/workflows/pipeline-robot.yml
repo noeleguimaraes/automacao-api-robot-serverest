@@ -17,6 +17,12 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Instalar Dependências do Projeto
+        # run: echo Instalação das depedências do Projeto
+        run: |
+          pip install robotframework
+          pip install robotframework-requests
+
       - name: Execução dos Testes de API
         # run: echo Executando os testes de API do Robot
         run: |
