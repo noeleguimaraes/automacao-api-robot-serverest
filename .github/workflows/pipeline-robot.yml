@@ -31,6 +31,7 @@ jobs:
       - name: Salvando resultado dos testes
           # run: echo Salvando o Report dos Testes
         uses: actions/upload-artifact@v3
+        if: always()
         with:
             name: resultado-testes
             path: ./reports
