@@ -1,0 +1,18 @@
+name: Pipeline Test
+
+on: push 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonagem Projeto
+        # run: echo Fazendo clone do repositorio na maquina virtual
+        uses: actions/checkout@v3
+
+      - name: Configuração do Python
+        # run: echo Instalação da versão 3.12 do Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
