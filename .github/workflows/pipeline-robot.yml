@@ -38,14 +38,14 @@ jobs:
 
       - name: Salvando resultado dos testes
           # run: echo Salvando o Report dos Testes
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 
         if: always()
         with:
             name: resultado-testes
             path: ./reports
 
       - name: Configurar site de Relatórios dos testes
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
         if: always()
 
       - name: Upload artifact
