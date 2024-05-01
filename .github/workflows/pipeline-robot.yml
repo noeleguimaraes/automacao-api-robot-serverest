@@ -48,7 +48,7 @@ jobs:
         uses: actions/configure-pages@v5
         if: always()
 
-      - name: Upload artifact
+      - name: Carregar os resultados
         uses: actions/upload-pages-artifact@v3
         if: always()
         with:
