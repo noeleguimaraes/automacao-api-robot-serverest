@@ -6,6 +6,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    permissions:
+          contents: read
+          pages: write
+          id-token: write
+    environment:
+      name: github-pages
+      url: https://noeleguimaraes.github.io/automacao-api-robot-serverest/report.html
+
     steps:
       - name: Clonagem Projeto
         # run: echo Fazendo clone do repositorio na maquina virtual
@@ -35,3 +43,15 @@ jobs:
         with:
             name: resultado-testes
             path: ./reports
+
+      - name: Configurar site de Relatórios dos testes
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+           path: results/
+
+      - name: Subir Site de Relatório dos testes
+        id: deployment
+        uses: actions/deploy-pages@v1
